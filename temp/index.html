@@ -1,0 +1,178 @@
+<div class="modal-add">
+  <div class="modal-add__inner">
+    <div class="field field_state">
+      <div class="btn-group" id="stateBtnGroup">
+        <button class="btn-group__btn flex_fix" type="button" data-value="passed" data-checked>Passed</button>
+        <button class="btn-group__btn flex_fix" type="button" data-value="backlog">Backlog</button>
+      </div>
+    </div>
+
+    <div class="field field_title">
+      <input class="input_title" type="text" id="titleInput" placeholder="Enter title">
+    </div>
+
+    <div class="field field_upload">
+      <label class="label_upload" for="imgInput" id="imgInputLabel">
+        Upload img
+        <input type="file" accept="image/*" id="imgInput" style="opacity: 0; position: absolute; width: 0; height: 0;">
+      </label>
+      <div class="upload-info">
+        <div class="upload-info__text flex">img: <span id="imgInputInfo">no img chosen</span></div>
+        <button class="btn_cancel flex_fix" id="imgCancelBtn" type="button" style="visibility: hidden;"></button>
+      </div>
+    </div>
+
+    <div class="field field_add">
+      <button class="btn" type="button" id="btnAdd">Add Game</button>
+    </div>
+  </div>
+</div>
+
+
+<script src="scripts/addModal.js"></script>
+<script src="scripts/radioBtnGroup.js"></script>
+<script src="scripts/titleInput.js"></script>
+<script src="scripts/imgInput.js"></script>
+<script src="scripts/btnAdd.js"></script>
+
+
+
+
+<style>
+  /* | | | | | | | | | | | | | | modal-add | | | | | | | | | | | | | | */
+
+  .modal-add {
+    display: inline-block;
+    width: 300px;
+    padding: 20px;
+    background-color: #000;
+    border-radius: 16px;
+  }
+
+  .modal-add__inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  /* field_state */
+
+  .field_state {
+    align-self: flex-end;
+  }
+
+  .btn-group {
+    display: inline-flex;
+    border-radius: 4px;
+    border: 1px solid #3f3f46;
+  }
+
+  .btn-group__btn {
+    cursor: pointer;
+    padding: 4px 6px;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: transparent;
+  }
+
+  .btn-group__btn:not(:last-of-type) {
+    border-right: 1px solid #3f3f46;
+  }
+
+  .btn-group__btn[data-checked] {
+    background-color: #3f3f46;
+  }
+
+  /* field_title */
+
+  .field_title {
+    margin-bottom: 10px;
+  }
+
+  .input_title {
+    width: 100%;
+    padding: 8px 16px;
+    border-radius: 14px;
+    border: 1px solid #fff;
+    transition: border-color 1s ease-out;
+  }
+
+  /* field_upload */
+
+  .field_upload {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 5px;
+  }
+
+  .label_upload {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 10px;
+    padding: 9px 14px;
+    background-color: #27272A;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: border-color 1s ease-out;
+  }
+
+  .label_upload::before {
+    content: '';
+    display: block;
+    flex: 0 0 auto;
+    width: 24px;
+    height: 24px;
+    background: no-repeat url('img/icons/upload.svg') center / contain;
+  }
+
+  .upload-info {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+  }
+
+  .upload-info__text {
+    position: relative;
+    line-height: 1.1;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .upload-info__text::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 20px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(270deg, #000, rgba(0, 0, 0, 0));
+  }
+
+  .btn_cancel {
+    margin-left: 8px;
+    width: 20px;
+    height: 20px;
+    background: no-repeat url('img/icons/close-circle.svg') center / 20px 20px;
+    cursor: pointer;
+  }
+
+  /* field_add */
+
+  .field_add {
+    margin-top: 50px;
+    align-self: center;
+  }
+
+  .btn {
+    padding: 10px 14px;
+    background-color: #3d3d50;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+</style>
