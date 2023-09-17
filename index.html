@@ -10,40 +10,63 @@
 </head>
 
 <body>
-  <ul class="cards">
-    <li class="card">
-      <div class="card__inner">
-        <div class="card__preview flex_fix">
-          <img class="card__img" src="img/game-logos/god-of-war-ragnarok.webp">
-        </div>
-        <div class="card__title">God of War: Ragnarök</div>
-      </div>
-    </li>
-    <li class="card card_trophy_platinum">
-      <div class="card__inner">
-        <div class="card__preview flex_fix">
-          <img class="card__img" src="img/game-logos/spider-man-miles-morales.jpeg">
-        </div>
-        <div class="card__title">Spider-Man: Miles Morales</div>
-      </div>
-    </li>
-    <li class="card">
-      <div class="card__inner">
-        <div class="card__preview flex_fix">
-          <img class="card__img" src="img/game-logos/wolfenstein-2-the-new-colossus.webp">
-        </div>
-        <div class="card__title">Wolfenstein II: The New Colossus</div>
-      </div>
-    </li>
-    <li class="card">
-      <div class="card__inner">
-        <div class="card__preview flex_fix">
-          <img class="card__img" src="img/game-logos/wolfenstein-the-old-blood.jpg">
-        </div>
-        <div class="card__title">Wolfenstein: The Old Blood</div>
-      </div>
-    </li>
+  <ul class="card-grid" id="cardGridPassed">
   </ul>
+
+  <div class="modal-add">
+    <div class="modal-add__inner">
+      <div class="field field_state">
+        <div class="btn-group" id="stateBtnGroup">
+          <button class="btn-group__btn flex_fix" type="button" data-value="passed" data-checked>Passed</button>
+          <button class="btn-group__btn flex_fix" type="button" data-value="backlog">Backlog</button>
+        </div>
+      </div>
+      <div class="field field_title">
+        <input class="input_title" type="text" id="titleInput" placeholder="Enter title">
+      </div>
+      <div class="field field_upload">
+        <label class="label_upload" for="imgInput" id="imgInputLabel">
+          Upload img
+          <input type="file" accept="image/*" id="imgInput"
+            style="opacity: 0; position: absolute; width: 0; height: 0;">
+        </label>
+        <div class="upload-info">
+          <div class="upload-info__text flex">img: <span id="imgInputInfo">no img chosen</span></div>
+          <button class="btn_cancel flex_fix" id="imgCancelBtn" type="button" style="visibility: hidden;"></button>
+        </div>
+      </div>
+      <div class="field field_add">
+        <button class="btn" type="button" id="btnAdd">Add Game</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- templates -->
+  <div id="templates" style="display: none;">
+    <li class="card">
+      <div class="card__inner">
+        <div class="card__preview flex_fix">
+          <img class="card__img" src="">
+        </div>
+        <div class="card__title"></div>
+      </div>
+    </li>
+  </div>
+
+
+  <script src="script.js"></script>
+  <script src="scripts/modalAdd.js"></script>
 </body>
 
 </html>
