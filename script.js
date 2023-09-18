@@ -2,7 +2,7 @@
 =======
 'use strict';
 
-let cardGridPassed = document.getElementById('cardGridPassed');
+let cardsGridPassed = document.getElementById('cardsGridPassed');
 let templates = {
   card: document.querySelector('#templates .card'),
   card__img: document.querySelector('#templates .card__img'),
