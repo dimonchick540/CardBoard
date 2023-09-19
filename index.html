@@ -11,60 +11,62 @@
 
 <body>
   <header class="header">
-    <button class="btn_add" type="button" id="addCardBtn">
-      <svg class="flex_fix" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
-        style="fill: #000; scale: 1.4;">
-        <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
-      </svg>
-      Add Card
-    </button>
-    <div class="modal-add" id="modalAdd" style="visibility: hidden;">
-      <div class="modal-add__inner">
-        <div class="field field_close">
-          <button class="btn_close flex_fix" type="button" id="closeModalAddBtn">
-            <svg class="flex_fix" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-              style="fill: #fff; rotate: 45deg;">
-              <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
-            </svg>
-          </button>
-        </div>
-        <div class="field field_state">
-          <div class="field_state__text">Add to:</div>
-          <div class="btn-group flex_fix" id="stateBtnGroup">
-            <button class="btn-group__btn flex_fix" type="button" data-value="passed" data-checked>Passed</button>
-            <button class="btn-group__btn flex_fix" type="button" data-value="backlog">Backlog</button>
-          </div>
-        </div>
-        <div class="field field_title">
-          <input class="input_title" type="text" id="titleInput" placeholder="Enter title">
-        </div>
-        <div class="field field_upload">
-          <label class="label_upload" for="imgInput" id="imgInputLabel">
-            <svg class="flex_fix" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              style="fill: #fff;">
-              <path d="M13 19v-4h3l-4-5-4 5h3v4z"></path>
-              <path
-                d="M7 19h2v-2H7c-1.654 0-3-1.346-3-3 0-1.404 1.199-2.756 2.673-3.015l.581-.102.192-.558C8.149 8.274 9.895 7 12 7c2.757 0 5 2.243 5 5v1h1c1.103 0 2 .897 2 2s-.897 2-2 2h-3v2h3c2.206 0 4-1.794 4-4a4.01 4.01 0 0 0-3.056-3.888C18.507 7.67 15.56 5 12 5 9.244 5 6.85 6.611 5.757 9.15 3.609 9.792 2 11.82 2 14c0 2.757 2.243 5 5 5z">
-              </path>
-            </svg>
-            Upload img
-            <input type="file" accept="image/*" id="imgInput"
-              style="opacity: 0; position: absolute; width: 0; height: 0;">
-          </label>
-          <div class="upload-info">
-            <div class="upload-info__text flex">img: <span id="imgInputInfo">no img chosen</span></div>
-            <button class="btn_close flex_fix" id="imgCancelBtn" type="button" style="visibility: hidden;">
-              <svg class="flex_fix" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                style="fill: #fff;">
-                <path
-                  d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm4.207 12.793-1.414 1.414L12 13.414l-2.793 2.793-1.414-1.414L10.586 12 7.793 9.207l1.414-1.414L12 10.586l2.793-2.793 1.414 1.414L13.414 12l2.793 2.793z">
-                </path>
+    <div class="container_add flex_fix">
+      <button class="btn_add" type="button" id="addCardBtn">
+        <svg class="flex_fix" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+          style="fill: #000; scale: 1.4;">
+          <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
+        </svg>
+        <span class="btn_add__text flex_fix">Add Card</span>
+      </button>
+      <div class="modal-add" id="modalAdd" style="visibility: hidden;">
+        <div class="modal-add__inner">
+          <div class="field field_close">
+            <button class="btn_close flex_fix" type="button" id="closeModalAddBtn">
+              <svg class="flex_fix" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                style="fill: #fff; rotate: 45deg;">
+                <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
               </svg>
             </button>
           </div>
-        </div>
-        <div class="field field_add">
-          <button class="btn" type="button" id="btnAdd">Add Game</button>
+          <div class="field field_state">
+            <div class="field_state__text">Add to:</div>
+            <div class="btn-group flex_fix" id="stateBtnGroup">
+              <button class="btn-group__btn flex_fix" type="button" data-value="passed" data-checked>Passed</button>
+              <button class="btn-group__btn flex_fix" type="button" data-value="backlog">Backlog</button>
+            </div>
+          </div>
+          <div class="field field_title">
+            <input class="input_title" type="text" id="titleInput" placeholder="Enter title">
+          </div>
+          <div class="field field_upload">
+            <label class="label_upload" for="imgInput" id="imgInputLabel">
+              <svg class="flex_fix" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                style="fill: #fff;">
+                <path d="M13 19v-4h3l-4-5-4 5h3v4z"></path>
+                <path
+                  d="M7 19h2v-2H7c-1.654 0-3-1.346-3-3 0-1.404 1.199-2.756 2.673-3.015l.581-.102.192-.558C8.149 8.274 9.895 7 12 7c2.757 0 5 2.243 5 5v1h1c1.103 0 2 .897 2 2s-.897 2-2 2h-3v2h3c2.206 0 4-1.794 4-4a4.01 4.01 0 0 0-3.056-3.888C18.507 7.67 15.56 5 12 5 9.244 5 6.85 6.611 5.757 9.15 3.609 9.792 2 11.82 2 14c0 2.757 2.243 5 5 5z">
+                </path>
+              </svg>
+              Upload img
+              <input type="file" accept="image/*" id="imgInput"
+                style="opacity: 0; position: absolute; width: 0; height: 0;">
+            </label>
+            <div class="upload-info">
+              <div class="upload-info__text flex">img: <span id="imgInputInfo">no img chosen</span></div>
+              <button class="btn_close flex_fix" id="imgCancelBtn" type="button" style="visibility: hidden;">
+                <svg class="flex_fix" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                  style="fill: #fff;">
+                  <path
+                    d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm4.207 12.793-1.414 1.414L12 13.414l-2.793 2.793-1.414-1.414L10.586 12 7.793 9.207l1.414-1.414L12 10.586l2.793-2.793 1.414 1.414L13.414 12l2.793 2.793z">
+                  </path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="field field_add">
+            <button class="btn" type="button" id="btnAdd">Add Game</button>
+          </div>
         </div>
       </div>
     </div>

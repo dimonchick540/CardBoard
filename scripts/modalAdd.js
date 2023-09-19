@@ -9,6 +9,10 @@ addCardBtn.addEventListener('click', () => {
     openModalAdd();
   } else closeModalAdd();
 });
+document.documentElement.addEventListener('click', (event) => {
+  if (modalAdd.style.visibility === 'hidden' || event.target.closest('.container_add')) return;
+  closeModalAdd();
+});
 
 
 
