@@ -74,8 +74,19 @@
 
   <main class="main">
     <div class="main__inner">
-      <div class="cards">
-        <ul class="cards__grid" id="cardsGridPassed"></ul>
+      <header class="main__header">
+        <nav class="main__nav flex_fix">
+          <ul class="slide-list" id="slideList">
+            <li class="slide-list__item">Passed</li>
+            <li class="slide-list__item">Backlog</li>
+            <li class="slider" id="slider"></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="main__content">
+        <div class="cards">
+          <ul class="cards__grid" id="cardsGridPassed"></ul>
+        </div>
       </div>
     </div>
   </main>
@@ -93,8 +104,10 @@
       </div>
     </li>
   </div>
+
+  <script src="scripts/decor.js"></script>
+  <script src="scripts/cards.js"></script>
   <script src="script.js"></script>
-  <script src="scripts/modalAdd.js"></script>
 </body>
 
 </html>

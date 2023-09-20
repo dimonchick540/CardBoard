@@ -5,13 +5,15 @@ html {
 }
 
 body {
+  --border-radius: 1rem;
+  --border-radius-larger: 2rem;
   display: grid;
   grid-template-rows: auto 1fr;
   row-gap: 10px;
   max-width: 1024px;
   height: 100vh;
   margin: 0 auto;
-  padding: 10px 0 20px;
+  padding: 10px 0;
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
@@ -25,14 +27,54 @@ body {
 
 .main {
   padding: 5px;
-  border-radius: 1rem;
+  border-radius: var(--border-radius);
   background-color: #35363A;
   overflow: auto;
 }
 
 .main__inner {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  row-gap: 10px;
   height: 100%;
-  overflow: auto;
+}
+
+.main__header {
+  display: flex;
+  align-items: center;
+}
+
+.main__nav {
+  display: inline-block;
+  padding: 3px;
+  background-color: #18181D;
+  border-radius: var(--border-radius-larger);
+}
+
+.slide-list {
+  position: relative;
+  display: inline-flex;
+}
+
+.slide-list__item {
+  flex: 0 0 auto;
+  padding: 10px 17px;
+  z-index: 1;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--border-radius-larger);
+  background-color: #333;
+  transition: translate 170ms ease-in-out, width 170ms ease-in-out;
+}
+
+.main__content {
+  border-radius: var(--border-radius);
+  overflow: hidden;
 }
 
 /* | | | | | | | | | | | | | | | | | header | | | | | | | | | | | | | | | | | */
@@ -68,7 +110,12 @@ body {
   }
 }
 
-/* | | | | | | | | | | | | | | | | cards__grid | | | | | | | | | | | | | | | | */
+/* | | | | | | | | | | | | | | | | cards | | | | | | | | | | | | | | | | */
+
+.cards {
+  height: 100%;
+  overflow: auto;
+}
 
 .cards__grid {
   display: grid;
@@ -81,7 +128,7 @@ body {
   padding: 20px;
   background-color: #212121;
   border: 1px solid #333;
-  border-radius: 1rem;
+  border-radius: var(--border-radius);
   overflow: hidden;
 }
 
@@ -149,7 +196,7 @@ body {
   display: inline-block;
   width: 300px;
   background-color: #000;
-  border-radius: 1rem;
+  border-radius: var(--border-radius);
   z-index: 1;
 }
 

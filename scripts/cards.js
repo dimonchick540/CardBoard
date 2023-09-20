@@ -1,7 +1,13 @@
 'use strict';
 // this file is responsible for the html block modal-add
-// the code is divided into sections corresponding to the classes(or id) specified in the header 
+// the code is divided into sections corresponding to the classes(or id) specified in the header
 
+let templates = {
+  card: document.querySelector('#templates .card'),
+  card__img: document.querySelector('#templates .card__img'),
+  card__title: document.querySelector('#templates .card__title')
+};
+let cardsGridPassed = document.getElementById('cardsGridPassed');
 let modalAdd = document.getElementById('modalAdd');
 let addCardBtn = document.getElementById('addCardBtn');
 addCardBtn.addEventListener('click', () => {
