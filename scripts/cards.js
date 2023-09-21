@@ -6,8 +6,6 @@ let templates = {
   cardTitle: document.querySelector('#templates .card__title')
 };
 let cardsGridAll = document.querySelectorAll('.cards__grid');
-let cardsGridPassed = document.getElementById('cardsGridPassed');
-let cardsGridBacklog = document.getElementById('cardsGridBacklog');
 
 
 
@@ -49,6 +47,9 @@ function wrapClickRadioBtn(pressedRadioBtn) {
   }
 }
 
+function getCheckedBtnValue() {
+  return stateBtnGroup.querySelector('[data-checked]')?.dataset.relatedId;
+}
 
 
 /* field_title */
@@ -106,18 +107,25 @@ function isValidImgInput() {
 let btnAdd = document.getElementById('btnAdd');
 btnAdd.addEventListener('click', clickBtnAdd);
 
-function clickBtnAdd() {
-  if (!isValidModalAdd()) return;
-  let card = createCard(titleInput.value, URL.createObjectURL(imgInput.files[0]));
-  cardsGridPassed.append(card);
-  resetModalAdd();
+function CreateCard(title, imgSrc) {
+  this.title = title;
+  this.imgSrc = imgSrc;
+}
+CreateCard.prototype.getElement = function () {
+  templates.cardTitle.textContent = this.title;
+  templates.cardImg.src = this.imgSrc;
+  return templates.card.cloneNode(true);
+};
+CreateCard.prototype.addToGrid = function (gridId) {
+  document.getElementById(gridId).append(this.getElement());
 };
 
-function createCard(title, imgSrc) {
-  templates.cardTitle.textContent = title;
-  templates.cardImg.src = imgSrc;
-  return templates.card.cloneNode(true);
-}
+function clickBtnAdd() {
+  if (!isValidModalAdd()) return;
+  let card = new CreateCard(titleInput.value, URL.createObjectURL(imgInput.files[0]))
+  card.addToGrid(getCheckedBtnValue());
+  resetModalAdd();
+};
 
 
 
