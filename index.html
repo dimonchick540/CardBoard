@@ -75,17 +75,22 @@
   <main class="main">
     <div class="main__inner">
       <header class="main__header">
-        <nav class="main__nav flex_fix">
-          <ul class="slide-list" id="slideList">
-            <li class="slide-list__item">Passed</li>
-            <li class="slide-list__item">Backlog</li>
-            <li class="slider" id="slider"></li>
+        <nav class="cards-nav flex_fix" id="cardsNav">
+          <ul class="slide-list">
+            <li class="slide-list__item">
+              <button class="cards-nav__btn" type="button" data-related-id="cardsGridPassed">Passed</button>
+            </li>
+            <li class="slide-list__item">
+              <button class="cards-nav__btn" type="button" data-related-id="cardsGridBacklog">Backlog</button>
+            </li>
+            <li class="slider"></li>
           </ul>
         </nav>
       </header>
       <div class="main__content">
         <div class="cards">
           <ul class="cards__grid" id="cardsGridPassed"></ul>
+          <ul class="cards__grid" id="cardsGridBacklog" style="display: none;"></ul>
         </div>
       </div>
     </div>

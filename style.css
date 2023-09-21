@@ -44,7 +44,7 @@ body {
   align-items: center;
 }
 
-.main__nav {
+.cards-nav {
   display: inline-block;
   padding: 3px;
   background-color: #18181D;
@@ -58,8 +58,12 @@ body {
 
 .slide-list__item {
   flex: 0 0 auto;
-  padding: 10px 17px;
   z-index: 1;
+}
+
+.cards-nav__btn {
+  padding: 10px 17px;
+  cursor: pointer;
 }
 
 .slider {

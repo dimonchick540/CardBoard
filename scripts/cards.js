@@ -1,13 +1,18 @@
 'use strict';
-// this file is responsible for the html block modal-add
-// the code is divided into sections corresponding to the classes(or id) specified in the header
 
 let templates = {
   card: document.querySelector('#templates .card'),
-  card__img: document.querySelector('#templates .card__img'),
-  card__title: document.querySelector('#templates .card__title')
+  cardImg: document.querySelector('#templates .card__img'),
+  cardTitle: document.querySelector('#templates .card__title')
 };
+let cardsGridAll = document.querySelectorAll('.cards__grid');
 let cardsGridPassed = document.getElementById('cardsGridPassed');
+let cardsGridBacklog = document.getElementById('cardsGridBacklog');
+
+
+
+/* | | | | | | | | | | | | | | | | modal-add | | | | | | | | | | | | | | | | */
+
 let modalAdd = document.getElementById('modalAdd');
 let addCardBtn = document.getElementById('addCardBtn');
 addCardBtn.addEventListener('click', () => {
@@ -22,14 +27,14 @@ document.documentElement.addEventListener('click', (event) => {
 
 
 
-/* | | | | | | | | | | | | | | | field_close | | | | | | | | | | | | | | | */
+/* field_close */
 
 let closeModalAddBtn = document.getElementById('closeModalAddBtn');
 closeModalAddBtn.addEventListener('click', closeModalAdd);
 
 
 
-/* | | | | | | | | | | | | | | | field_state | | | | | | | | | | | | | | | */
+/* field_state */
 
 let stateBtnGroup = document.getElementById('stateBtnGroup');
 stateBtnGroup.addEventListener('click', wrapClickRadioBtn(stateBtnGroup.querySelector('[data-checked]')));
@@ -46,7 +51,7 @@ function wrapClickRadioBtn(pressedRadioBtn) {
 
 
 
-/* | | | | | | | | | | | | | | | | | field_title | | | | | | | | | | | | | | | */
+/* field_title */
 
 let titleInput = document.getElementById('titleInput');
 
@@ -62,7 +67,7 @@ function isValidTitleInput() {
 
 
 
-/* | | | | | | | | | | | | | | | | | | field_upload | | | | | | | | | | | | | | | | */
+/* field_upload */
 
 let imgInput = document.getElementById('imgInput');
 let imgInputLabel = document.getElementById('imgInputLabel');
@@ -96,7 +101,7 @@ function isValidImgInput() {
 
 
 
-/* | | | | | | | | | | | | | | | | | | field_add | | | | | | | | | | | | | | | | */
+/* field_add */
 
 let btnAdd = document.getElementById('btnAdd');
 btnAdd.addEventListener('click', clickBtnAdd);
@@ -109,14 +114,14 @@ function clickBtnAdd() {
 };
 
 function createCard(title, imgSrc) {
-  templates.card__title.textContent = title;
-  templates.card__img.src = imgSrc;
+  templates.cardTitle.textContent = title;
+  templates.cardImg.src = imgSrc;
   return templates.card.cloneNode(true);
 }
 
 
 
-/* | | | | | | | | | | | | | | | | | | general | | | | | | | | | | | | | | | | */
+/* general */
 
 function isValidModalAdd() {
   let isValidTitle = isValidTitleInput();
@@ -141,4 +146,21 @@ function closeModalAdd() {
 
 function openModalAdd() {
   modalAdd.style.visibility = '';
+}
+
+
+
+/* | | | | | | | | | | | | | | | | | | cards-nav | | | | | | | | | | | | | | | | */
+
+let cardsNav = document.getElementById('cardsNav');
+
+cardsNav.addEventListener('click', (event) => {
+  let id = event.target.closest('button')?.dataset.relatedId;
+  if (id) showCardsGrid(id);
+});
+
+function showCardsGrid(id) {
+  cardsGridAll.forEach((cardsGrid) => {
+    cardsGrid.style.display = (cardsGrid.id === id) ? '' : 'none';
+  });
 }

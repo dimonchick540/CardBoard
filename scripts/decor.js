@@ -1,7 +1,8 @@
 'use strict';
 
-let slideList = document.getElementById("slideList");
-let slider = document.getElementById("slider");
+let slideList = document.querySelector('.slide-list');
+let slider = document.querySelector('.slider');
+
 
 slideList.addEventListener("click", (event) => {
   let item = event.target.closest(".slide-list__item");
