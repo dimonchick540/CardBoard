@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Cards Grid</title>
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -29,11 +29,19 @@
               </svg>
             </button>
           </div>
-          <div class="field field_state">
-            <div class="field_state__text">Add to:</div>
-            <div class="btn-group flex_fix" id="stateBtnGroup">
-              <button class="btn-group__btn flex_fix" type="button" data-related-id="cardsGridPassed" data-checked>Passed</button>
-              <button class="btn-group__btn flex_fix" type="button" data-related-id="cardsGridBacklog">Backlog</button>
+          <div class="field field_card-location">
+            <div class="field_card-location__text flex_fix">Add to:</div>
+            <div class="radio-btns flex_fix" id="cardLocationBtns">
+              <label class="radio-btns__label" for="radioBtnPassed">
+                Passed
+                <input class="radio-btns__input" type="radio" name="card-location-radio"
+                  data-related-id="cardsGridPassed" id="radioBtnPassed">
+              </label>
+              <label class="radio-btns__label" for="radioBtnBacklog">
+                Backlog
+                <input class="radio-btns__input" type="radio" name="card-location-radio"
+                  data-related-id="cardsGridBacklog" id="radioBtnBacklog">
+              </label>
             </div>
           </div>
           <div class="field field_title">

@@ -32,24 +32,14 @@ closeModalAddBtn.addEventListener('click', closeModalAdd);
 
 
 
-/* field_state */
+/* field_card-location */
 
-let stateBtnGroup = document.getElementById('stateBtnGroup');
-stateBtnGroup.addEventListener('click', wrapClickRadioBtn(stateBtnGroup.querySelector('[data-checked]')));
-
-function wrapClickRadioBtn(pressedRadioBtn) {
-  return function clickRadioBtn(event) {
-    let btn = event.target.closest('button');
-    if (!btn || btn === pressedRadioBtn) return;
-    pressedRadioBtn?.removeAttribute('data-checked');
-    btn.setAttribute('data-checked', '');
-    pressedRadioBtn = btn;
-  }
-}
+let cardLocationBtns = document.getElementById('cardLocationBtns');
 
 function getCheckedBtnValue() {
-  return stateBtnGroup.querySelector('[data-checked]')?.dataset.relatedId;
+  return cardLocationBtns.querySelector(':checked').dataset.relatedId;
 }
+
 
 
 /* field_title */
@@ -153,10 +143,15 @@ function closeModalAdd() {
 }
 
 function openModalAdd() {
+  setModalAdd();
   modalAdd.style.visibility = '';
 }
 
-
+function setModalAdd() {
+  let visibleCardsGridId = document.querySelector('.cards__grid:not([style*="display: none"])').id;
+  let cardLocationBtn = cardLocationBtns.querySelector(`[data-related-id="${visibleCardsGridId}"]`);
+  cardLocationBtn.click();
+}
 
 /* | | | | | | | | | | | | | | | | | | cards-nav | | | | | | | | | | | | | | | | */
 

@@ -146,8 +146,8 @@ body {
 }
 
 .card__preview {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 }
 
 .card__img {
@@ -232,37 +232,48 @@ body {
   cursor: pointer;
 }
 
-/* field_state */
+/* field_card-location */
 
-.field_state {
+.field_card-location {
   display: flex;
   justify-content: space-between;
 }
 
-.field_state__text {
+.field_card-location__text {
   align-self: flex-end;
   font-size: 16px;
 }
 
-.btn-group {
+.radio-btns {
   display: inline-flex;
   border-radius: 4px;
   border: 1px solid #3f3f46;
 }
 
-.btn-group__btn {
-  cursor: pointer;
+.radio-btns__label {
+  position: relative;
+  display: inline-block;
+  flex: 0 0 auto;
   padding: 4px 6px;
   font-size: 12px;
   font-weight: 500;
-  background-color: transparent;
 }
 
-.btn-group__btn:not(:last-of-type) {
+.radio-btns__label:not(:last-of-type) {
   border-right: 1px solid #3f3f46;
 }
 
-.btn-group__btn[data-checked] {
+.radio-btns__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-btns__label:has(input:checked) {
   background-color: #3f3f46;
 }
 
